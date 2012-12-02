@@ -1,7 +1,7 @@
 Mixins::Application.routes.draw do
   root :to => 'recipes#index'
   #send facebook callback to path method of the recipes
-  match 'auth/facebook/callback' => 'sessions#create'
+  match 'auth/facebook/callback', to: 'sessions#create'
   #change this so a controller actions sends a flash then redirects to index
   #note: this is the newer way of writing routes!
   match 'auth/failure/', to: redirect('/')
